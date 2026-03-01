@@ -160,7 +160,7 @@ export default () => {
         if (!isRecording) {
             startRecording();
         } else {
-            stopRecording();
+            stopRecording(length);
         }
     };
     return (
