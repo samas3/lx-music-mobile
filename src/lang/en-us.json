@@ -521,5 +521,7 @@
   "download.type3": "Name",
   "download.no_url": "Cannot find URL",
   "download.error": "Download error",
-  "download.success": "Download success"
+  "download.success": "Download success",
+  "download.failed": "Download failed: internal error",
+  "download.no_permission": "No permission to write file"
 }

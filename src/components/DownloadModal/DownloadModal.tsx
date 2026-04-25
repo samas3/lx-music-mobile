@@ -42,14 +42,24 @@ export default forwardRef<DownloadModalType, DownloadModalProps>(({}, ref) => {
   const handleSelect = (qualityId: LX.Quality) => {
     dialogRef.current?.setVisible(false)
     downloadMusic(selectInfo.musicInfo, qualityId).then((res) => {
-        if (res == 1) {
-            toast(t('download.no_url'));
-        } else if (res > 1) {
-            toast(t('download.error') + ": " + res);
-        } else {
-            toast(t('download.success'))
+        switch (res) {
+            case 0:
+                toast(t('download.success'))
+                break;
+            case 1:
+                toast(t('download.no_url'));
+                break;
+            case 2:
+                toast(t('download.failed'));
+                break;
+            case 3:
+                toast(t('download.no_permission'));
+                break;
+            default:
+                toast(t('download.error') + ": " + res);
         }
     }).catch((e) => {
+        console.log(e.message);
         toast(e.message);
     });
   }

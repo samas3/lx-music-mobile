@@ -521,5 +521,7 @@
   "download.type3": "歌名",
   "download.no_url": "未找到URL",
   "download.error": "下载失败",
-  "download.success": "下载完成"
+  "download.success": "下载完成",
+  "download.failed": "下载失败：内部错误",
+  "download.no_permission": "没有存储权限"
 }
